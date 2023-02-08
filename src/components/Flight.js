@@ -1,6 +1,4 @@
 import React from 'react'
-import '../styles/Style.css'
-
 const Flight = ({plane}) => {
     return (
         <div className='flex  border-1 shadow-lg my-1 px-2   w-full h-[8rem] ' >

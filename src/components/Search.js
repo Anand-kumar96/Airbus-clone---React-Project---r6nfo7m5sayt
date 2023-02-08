@@ -16,7 +16,6 @@ const Search = ({start , last , switch1}) => {
         let day = date.getUTCDate();
         let year = date.getUTCFullYear();
         let newDate=[day.toString().padStart(2, '0'), month.toString().padStart(2, '0'),year ].join('-')
-        console.log(newDate)
         setStartDayMonthYear(newDate);
     }
     const handleReturn=(date)=>{
@@ -25,7 +24,6 @@ const Search = ({start , last , switch1}) => {
         let day = date.getUTCDate();
         let year = date.getUTCFullYear();
         let newDate=[day.toString().padStart(2, '0'), month.toString().padStart(2, '0'),year ].join('-')
-        console.log(newDate)
         setReturnDayMonthYear(newDate);
     }
 

@@ -1,0 +1,41 @@
+
+.loginScreen{
+  width:380px;
+  margin:70px auto;
+  text-align: center;
+}
+.loginScreen img{
+  margin-left: 85px;
+  width:200px;
+}
+.loginScreen input{
+  display: block;
+  height:40px;
+  width: 100%;
+  margin-bottom:10px;
+  padding:0px 10px;
+  
+  border:2px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.loginScreen input[type="submit"]{
+  border-radius: 5px;
+  background-color: #0077b5;
+  border:0;
+  color:#fff;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+.loginScreen h4 span{
+  font-weight: 600;
+  color:#0077b5;
+  cursor:pointer;
+}
+body{
+  background-image: url(../background.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

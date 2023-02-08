@@ -1,26 +1,24 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
-import { GoogleAuthProvider } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDWCPdKslKYXCyYVh0boXOpVPfd90iaf2Q",
-  authDomain: "airbus-clone.firebaseapp.com",
-  projectId: "airbus-clone",
-  storageBucket: "airbus-clone.appspot.com",
-  messagingSenderId: "134102850858",
-  appId: "1:134102850858:web:28721251c54e9bd1e1d253",
-  };
+  apiKey: "AIzaSyC7aeCzmZ046KuXuFxio5QZ6ssBhPcByCQ",
+  authDomain: "plane-20960.firebaseapp.com",
+  projectId: "plane-20960",
+  storageBucket: "plane-20960.appspot.com",
+  messagingSenderId: "181039640899",
+  appId: "1:181039640899:web:3065b0cb3669fc198bbff6",
+  // measurementId: "G-SFD02RZ3JF"
+  }; 
   
   // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
-const provider = new GoogleAuthProvider();
-const db = getFirestore(app);
-
-export { auth , provider , db };
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const db = firebaseApp.firestore();
+  const auth = firebase.auth();
+  export { db, auth };

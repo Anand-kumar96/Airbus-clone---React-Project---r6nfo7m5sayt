@@ -27,8 +27,10 @@ const Result = () => {
     setStartDate3(null);
   } else{
     alert(`payment successful and Ticket has been booked
-    Ticket details:-> Name: ${name}
+    Ticket details:
+    Name:-> ${name}
     Airplane Name:-> ${flightDetails.airlineName}
+    Ticket No:->${flightDetails.from.slice(0,3) +"-"+ flightDetails.to.slice(0,3)+":"+Math.floor(Math.random()*10000)}
     from: ${flightDetails.from} to ${flightDetails.to}
     Departure :->  Date: ${startDayMonthYear} Time: ${flightDetails.departure.departureTime}
     Return :->  Date: ${returnDayMonthYear} Time: ${flightDetails.return.returnTime}

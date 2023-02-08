@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import logo from './AIR.PA_BIG.png'
+import logo1 from './logo1.png';
 import { Link } from 'react-router-dom'
-import {MediumContext} from '../context/MediumContext'
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 const Navbar = () => {
-  const { user ,handleUserAuth,handleUserSignOut} = useContext(MediumContext)
-
+  const userState = useSelector(selectUser);
+  const { user } = userState;
   return (
         <nav className="bg-amber-400 border-gray-200 px-2 sm:px-4 py-2.5 rounded " style={{backgroundColor:"rgb(255,235,59)"}}>
         <div className="container flex flex-wrap items-center mx-auto justify-between">
@@ -28,25 +32,18 @@ const Navbar = () => {
             >Checkout</Link>
         </li>
         <li>
-         { user ?
          <div  className="flex"><img
-         src={user.photoURL}
+         src={logo1}
          alt='logo'
          width={25}
          height={25}
          className='rounded-full'
        /> 
-       <span onClick={handleUserSignOut} className="ml-1 block py-2 pl-3 pr-4 text-blue font-[600] text-[15px] md:p-0 text-blue hover:bg-gray- 
+       <span onClick={()=>firebase.auth().signOut()} className="ml-1 block py-2 pl-3 pr-4 text-blue font-[600] text-[15px] md:p-0 text-blue hover:bg-gray- 
          100 md:hover:bg-transparent md:border-0 md:hover:text-blue md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray- 
           700block py-2 pl-3 pr-4 text-blue font-[600] text-[15px] md:p-0 text-blue hover:bg-gray-100 md:hover:bg-transparent md:border-0 
           md:hover:text-blue md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 cursor-pointer">logout</span>
        </div>
-          :
-         <button onClick={handleUserAuth} 
-         className="block py-2 pl-3 pr-4 text-blue font-[600] text-[15px] md:p-0 text-blue hover:bg-gray-100 md:hover:bg-transparent 
-          md:border-0 md:hover:text-blue md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 cursor-pointer "
-          >Login</button>
-         }
         </li>
       </ul>
     </div>
